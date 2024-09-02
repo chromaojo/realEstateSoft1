@@ -1,15 +1,15 @@
 // require('dotenv').config();
 const mysql = require('mysql');
 
-// const db = mysql.createConnection({
-//     host: process.env.HOST,
-//     user: process.env.USER,
-//     password: process.env.PASS,
-//     database: process.env.DATABASE,
-//     waitForConnections: true,
-//   });
+ const db = mysql.createConnection({
+     host: process.env.HOST,
+     user: process.env.USER,
+     password: process.env.PASS,
+     database: process.env.DATABASE,
+     waitForConnections: true,
+  });
 
-const db = mysql.createConnection({
+/*const db = mysql.createConnection({
   
   host: 'localhost',
   user: 'root',
@@ -17,7 +17,7 @@ const db = mysql.createConnection({
   database: 'realEstate',
   waitForConnections: true,
 
-});
+}); */
 
 
 // Workbench Setting 
