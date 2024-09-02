@@ -10,7 +10,7 @@ route.get('/createUser', (req, res) => {
 
 
     const sqlUsers = `
-        CREATE TABLE IF NOT EXISTS realestate.re_users (
+        CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_users (
         id INT PRIMARY KEY AUTO_INCREMENT,
         user_id VARCHAR(255) UNIQUE,
         email VARCHAR(255) NOT NULL UNIQUE,
@@ -20,7 +20,7 @@ route.get('/createUser', (req, res) => {
         `;
 
     const sqlAccounts = `
-        CREATE TABLE IF NOT EXISTS realestate.re_accounts (
+        CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_accounts (
         account_id VARCHAR(255) UNIQUE PRIMARY KEY,
         account_balance INT DEFAULT 0,
         total_spent INT DEFAULT 0,
@@ -73,7 +73,7 @@ route.get('/createProp', (req, res) => {
 
 
     const sqlProp = `
-        CREATE TABLE IF NOT EXISTS realEstate.re_property (
+        CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_property (
         id INT PRIMARY KEY AUTO_INCREMENT,
         prop_id INT UNIQUE,
         title VARCHAR(255) NOT NULL,
@@ -91,7 +91,7 @@ route.get('/createProp', (req, res) => {
         `;
 
     const sqlSaved = `
-        CREATE TABLE IF NOT EXISTS realEstate.re_saved (
+        CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_saved (
         id INT UNIQUE PRIMARY KEY AUTO_INCREMENT,
         prop_id INT UNIQUE,
         title VARCHAR(255) NOT NULL,
@@ -122,7 +122,7 @@ route.get('/createProp', (req, res) => {
         }
         console.log('Saved Table Created Successfully');
 
-    });
+    })
     res.send('Saved & Property Table Created Successfully');
 });
 
@@ -130,7 +130,7 @@ route.get('/createReport', (req, res) => {
 
 
     const sqlReport = `
-    CREATE TABLE IF NOT EXISTS realEstate.re__report (
+    CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re__report (
       id INT AUTO_INCREMENT PRIMARY KEY,
       report_id VARCHAR(255) UNIQUE,
       title VARCHAR(255) NOT NULL,
@@ -143,7 +143,7 @@ route.get('/createReport', (req, res) => {
   `;
 
     const sqlReportC = `
-    CREATE TABLE IF NOT EXISTS realEstate.re__content (
+    CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re__content (
       id INT PRIMARY KEY AUTO_INCREMENT,
       activity TEXT,
       result TEXT,
@@ -180,7 +180,7 @@ route.get('/createComplain', (req, res) => {
 
 
     const sqlComplaint = `
-    CREATE TABLE IF NOT EXISTS realEstate.re_complaint (
+    CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_complaint (
       id INT AUTO_INCREMENT PRIMARY KEY,
       report_id VARCHAR(255) UNIQUE,
       name VARCHAR(255) NOT NULL,
@@ -214,7 +214,7 @@ route.get('/createComplain', (req, res) => {
 route.get('/createInvestment', (req, res) => {
 
     const sqlInvest = `
-    CREATE TABLE IF NOT EXISTS realEstate.re_investment (
+    CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_investment (
       id INT AUTO_INCREMENT PRIMARY KEY,
       invest_id VARCHAR(255) UNIQUE,
       title VARCHAR(255) NOT NULL,
@@ -227,7 +227,7 @@ route.get('/createInvestment', (req, res) => {
     );
   `;
     const sqlTransaction = `
-    CREATE TABLE IF NOT EXISTS realEstate.re_transaction (
+    CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_transaction (
         transaction_id INT AUTO_INCREMENT PRIMARY KEY,
         user_id VARCHAR(255),
         payment_method VARCHAR(255),
@@ -267,7 +267,7 @@ route.get('/createInvestment', (req, res) => {
 route.get('/createLead', (req, res) => {
 
     const sqlLead = `
-    CREATE TABLE IF NOT EXISTS realEstate.re_lead (
+    CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_lead (
         lead_id INT AUTO_INCREMENT PRIMARY KEY,
         title VARCHAR(20),
         gender VARCHAR(20),
@@ -293,7 +293,7 @@ route.get('/createLead', (req, res) => {
   `;
   
     const sqlInspect = `
-    CREATE TABLE IF NOT EXISTS realEstate.re_inspection (
+    CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_inspection (
       id INT AUTO_INCREMENT PRIMARY KEY,
       transaction_id VARCHAR(255) UNIQUE,
       name VARCHAR(255) NOT NULL,
