@@ -67,7 +67,7 @@ route.post('/register', (req, res) => {
                     //     to: email,
                     //     subject: "Welcome To Property Biz App",
                     //     text: `<b> Dear New User, Welcome to Property Biz INT'L,</b> \n \n  Your Real Est Account has been opened successfully . \n Ensure that Your Password is kept safe. Incase of any compromise, ensure you change or optimizee the security on your application.`,
-                    // }
+                    // } 
                     // mail.sendIt(messages)
 
                     // To create the account table into the user 
