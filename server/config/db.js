@@ -2,11 +2,13 @@
 const mysql = require('mysql');
 
  const db = mysql.createConnection({
-     host: process.env.HOST,
-     user: process.env.USER,
-     password: process.env.PASS,
-     database: process.env.DATABASE,
-     waitForConnections: true,
+     host: process.env.MYSQL_ADDON_HOST,
+    user: process.env.MYSQL_ADDON_USER,
+    uri: process.env.MYSQL_ADDON_URI,
+    password: process.env.MYSQL_ADDON_PASSWORD,
+    database : process.env.MYSQL_ADDON_DB,
+    port : process.env.MYSQL_ADDON_PORT,
+    waitForConnections: true,
   });
 
 /*const db = mysql.createConnection({
