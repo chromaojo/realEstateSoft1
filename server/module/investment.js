@@ -45,7 +45,7 @@ const allInvest = (req, res) => {
 
     if (userCookie) {
         const sql = `
-      SELECT * FROM realestate.re_investment ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_investment ORDER BY id DESC;
     `;
 
         db.query(sql, (err, results) => {
@@ -83,7 +83,7 @@ const oneInvest = (req, res, next) => {
         res.redirect('/logout');
     } else {
         const sql = `
-      SELECT * FROM realestate.re_investment WHERE id =?;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_investment WHERE id =?;
     `;
 
         db.query(sql, [id], (err, results) => {
@@ -125,7 +125,7 @@ const createInvest = (req, res) => {
 
             const picture = '/invest/'+pixz;
           
-            db.query('INSERT INTO realEstate.re_investment SET ?', { title , details , invest_id, price , picture , date });
+            db.query('INSERT INTO bkew76jt01b1ylysxnzp.re_investment SET ?', { title , details , invest_id, price , picture , date });
            res.redirect('/user/investments');
         });
        
