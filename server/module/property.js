@@ -45,7 +45,7 @@ const allProp = (req, res)=>{
     
     if (userCookie){
         const sql = `
-      SELECT * FROM realEstate.re_property ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_property ORDER BY id DESC;
     `;
 
         db.query(sql,  (err, results) => {
@@ -79,7 +79,7 @@ const allComProp = (req, res)=>{
     
     if (userCookie){
         const sql = `
-      SELECT * FROM realEstate.re_property WHERE category = ? ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_property WHERE category = ? ORDER BY id DESC;
     `;
 
         db.query(sql, [category], (err, results) => {
@@ -112,7 +112,7 @@ const allResProp = (req, res)=>{
     
     if (userCookie){
         const sql = `
-      SELECT * FROM realEstate.re_property ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_property ORDER BY id DESC;
     `;
 
         db.query(sql, [category] ,(err, results) => {
@@ -144,7 +144,7 @@ const allShortProp = (req, res)=>{
     
     if (userCookie){
         const sql = `
-      SELECT * FROM realEstate.re_property WHERE prop_type = ? ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_property WHERE prop_type = ? ORDER BY id DESC;
     `;
 
         db.query(sql, [prop_type], (err, results) => {
@@ -176,7 +176,7 @@ const allRentProp = (req, res)=>{
     
     if (userCookie){
         const sql = `
-      SELECT * FROM realEstate.re_property WHERE action = ? ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_property WHERE action = ? ORDER BY id DESC;
     `;
 
         db.query(sql, [action], (err, results) => {
@@ -208,7 +208,7 @@ const allLeaseProp = (req, res)=>{
     
     if (userCookie){
         const sql = `
-      SELECT * FROM realEstate.re_property WHERE action = ? ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_property WHERE action = ? ORDER BY id DESC;
     `;
 
         db.query(sql, [action], (err, results) => {
@@ -240,7 +240,7 @@ const allSaleProp = (req, res)=>{
     
     if (userCookie){
         const sql = `
-      SELECT * FROM realEstate.re_property WHERE action = ? ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_property WHERE action = ? ORDER BY id DESC;
     `;
 
         db.query(sql, [action], (err, results) => {
@@ -279,7 +279,7 @@ const oneProp = (req, res)=>{
         res.redirect('/logout');
     } else {
         const sql = `
-      SELECT * FROM realEstate.re_property WHERE id =?;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_property WHERE id =?;
     `;
 
         db.query(sql, [id], (err, results) => {
@@ -326,7 +326,7 @@ const createProp = (req, res) => {
             // Now you can handle the name, age, address, and pictures array
             // For example, save them to a database, send to another API, etc.
 
-            db.query('INSERT INTO realEstate.re_property SET ?', { title, prop_id, picture , description, prop_type, category, action ,prop_status, price, location });
+            db.query('INSERT INTO bkew76jt01b1ylysxnzp.re_property SET ?', { title, prop_id, picture , description, prop_type, category, action ,prop_status, price, location });
            res.redirect('/user/dashboard')
         });
        
