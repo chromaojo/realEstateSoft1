@@ -26,7 +26,7 @@ const allLead = (req, res) => {
 
     if (userCookie) {
         const sql = `
-      SELECT * FROM realEstate.re_lead ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_lead ORDER BY id DESC;
     `;
 
         db.query(sql, (err, results) => {
@@ -60,7 +60,7 @@ const allMyLead = (req, res) => {
 
     if (userCookie) {
         const sql = `
-      SELECT * FROM realEstate.re_lead WHERE user_id = ? ORDER BY lead_id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_lead WHERE user_id = ? ORDER BY lead_id DESC;
     `;
 
         db.query(sql, [user_id], (err, results) => {
@@ -98,7 +98,7 @@ const oneLead = (req, res, next) => {
         res.redirect('/logout');
     } else {
         const sql = `
-      SELECT * FROM realEstate.re_lead WHERE lead_id =?;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_lead WHERE lead_id =?;
     `;
 
         db.query(sql, [id], (err, results) => {
@@ -138,7 +138,7 @@ const createLead = (req, res) => {
         
         const lead_by = userData.surname + ' ' + userData.othername
 
-        db.query('INSERT INTO realEstate.re_lead SET ?', { first_name, last_name, title, gender, email, phone_number, company_name, job_title, industry, info, location, user_id, lead_by });
+        db.query('INSERT INTO bkew76jt01b1ylysxnzp.re_lead SET ?', { first_name, last_name, title, gender, email, phone_number, company_name, job_title, industry, info, location, user_id, lead_by });
         res.redirect('/user/mYlead/wWwCcYtT')
 
     } catch (error) {
