@@ -24,7 +24,7 @@ const allSaved = (req, res) => {
 
     if (userCookie) {
         const sql = `
-      SELECT * FROM realEstate.re_saved WHERE user_id = ? ORDER BY id DESC;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_saved WHERE user_id = ? ORDER BY id DESC;
     `;
 
         db.query(sql, [userId], (err, results) => {
@@ -63,7 +63,7 @@ const oneSaved = (req, res) => {
         res.redirect('/logout');
     } else {
         const sql = `
-      SELECT * FROM realEstate.re_saved WHERE id =?;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_saved WHERE id =?;
     `;
 
         db.query(sql, [id], (err, results) => {
@@ -95,7 +95,7 @@ const createSaved = (req, res, next) => {
     if (userData) {
 
         const sql = `
-      SELECT * FROM realEstate.re_saved WHERE prop_id =?;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_saved WHERE prop_id =?;
     `;
 
 
@@ -108,7 +108,7 @@ const createSaved = (req, res, next) => {
             }else{
                 try {
                     const sql = `
-                    SELECT * FROM realEstate.re_property WHERE prop_id = ?;
+                    SELECT * FROM bkew76jt01b1ylysxnzp.re_property WHERE prop_id = ?;
                   `;
     
                     db.query(sql, [prop_id], (err, results) => {
@@ -122,7 +122,7 @@ const createSaved = (req, res, next) => {
                         const pikz =picture.split(',')[0]   
     
                         console.log('This is the propertyprice ', price);
-                        db.query('INSERT INTO realEstate.re_saved SET ?', { title, location, pro_link, price, user_id, picture:pikz, prop_id });
+                        db.query('INSERT INTO bkew76jt01b1ylysxnzp.re_saved SET ?', { title, location, pro_link, price, user_id, picture:pikz, prop_id });
     
                         return next();
                     })
@@ -155,7 +155,7 @@ const deleteSaved = (req, res, next) => {
         try {
             const id = req.params.id;
             // Perform the deletion
-            const sql = `DELETE FROM realEstate.re_saved WHERE prop_id = ?;`;
+            const sql = `DELETE FROM bkew76jt01b1ylysxnzp.re_saved WHERE prop_id = ?;`;
             db.query(sql, [id], (err, result) => {
                 if (err) {
                     console.error('Error deleting saved:', err);
