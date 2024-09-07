@@ -45,7 +45,7 @@ route.use(express.urlencoded({ extended: true }));
 route.post('/register', (req, res) => {
     const { email, password, password1, surname, othername, username, address, phone_number } = req.body;
 
-    db.query('SELECT email FROM realEstate.re_users WHERE email = ?', [email], async (error, result) => {
+    db.query('SELECT email FROM bkew76jt01b1ylysxnzp.re_users WHERE email = ?', [email], async (error, result) => {
         if (error) { console.log("Customized Error ", error); }
         if (result.length > 0) {
             return res.status(401).json({
@@ -54,7 +54,7 @@ route.post('/register', (req, res) => {
         } else if (password == password1) {
             const user_id = 'rE' + random + 'sT'
             const hashedPassword = await bcrypt.hash(password, 10);
-            db.query('INSERT INTO realEstate.re_users SET ?', { email: email, password: hashedPassword, user_id }, (error, result) => {
+            db.query('INSERT INTO bkew76jt01b1ylysxnzp.re_users SET ?', { email: email, password: hashedPassword, user_id }, (error, result) => {
                 if (error) {
                     console.log('A Registeration Error Occured ', error);
                 } else {
@@ -71,14 +71,14 @@ route.post('/register', (req, res) => {
                     // mail.sendIt(messages)
 
                     // To create the account table into the user 
-                    db.query('SELECT * FROM realEstate.re_users WHERE email = ?', [email], async (error, result) => {
+                    db.query('SELECT * FROM bkew76jt01b1ylysxnzp.re_users WHERE email = ?', [email], async (error, result) => {
                         if (error) {
 
                             return res.status(500).json({
                                 message: 'Internal Server Error'
                             });
                         } else {
-                            db.query('INSERT INTO realEstate.re_accounts SET ?', { user_id: result[0].user_id, email: email, account_id: rand, account_balance: 0, surname: surname, othername: othername, username: username, address: address, phone_number: phone_number });
+                            db.query('INSERT INTO bkew76jt01b1ylysxnzp.re_accounts SET ?', { user_id: result[0].user_id, email: email, account_id: rand, account_balance: 0, surname: surname, othername: othername, username: username, address: address, phone_number: phone_number });
                         }
                     });
 
@@ -208,7 +208,7 @@ route.get('/profile', UserLoggin, (req, res) => {
     if (!userCookie) {
         res.redirect('/login');
     } else {
-        const user = db.query('SELECT * FROM realEstate.re_users WHERE email = ?', [userData.email], async (error, result) => {
+        const user = db.query('SELECT * FROM bkew76jt01b1ylysxnzp.re_users WHERE email = ?', [userData.email], async (error, result) => {
 
             // console.log('This is the dashboard Details : ', userData);
             if (error) {
