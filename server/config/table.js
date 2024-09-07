@@ -41,19 +41,19 @@ route.get('/createUser', (req, res) => {
         FOREIGN KEY (user_id) REFERENCES re_users(user_id)
         );
         `;
-    // db.query(sqlUsers, (errRoles) => {
-    //     if (errRoles) {
-    //         console.log('Error creating roles table:', errRoles);
-    //         return res.status(500).send('Internal Server Error');
-    //     }
-    //     console.log('Users Created Successfully');
-    // });
+    db.query(sqlUsers, (errRoles) => {
+        if (errRoles) {
+            console.log('Error creating roles table:', errRoles);
+            return res.status(500).send('Internal Server Error');
+        }
+        console.log('Users Created Successfully');
+    });
      db.query(sqlAccounts, (errAccounts) => {
             if (errAccounts) {
                 console.log('Error creating accounts table:', errAccounts);
                 return res.status(500).send('Internal Server Error');
             }
-         res.render('Account Created"):
+         res.send('Account Created"):
             console.log('Accounts Created Successfully');
 
 
