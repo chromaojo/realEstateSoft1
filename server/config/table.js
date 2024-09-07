@@ -21,24 +21,26 @@ route.get('/createUser', (req, res) => {
 
     const sqlAccounts = `
         CREATE TABLE IF NOT EXISTS bkew76jt01b1ylysxnzp.re_accounts (
-        account_id VARCHAR(255) UNIQUE PRIMARY KEY,
-        account_balance INT DEFAULT 0,
-        total_spent INT DEFAULT 0,
-        phone_number VARCHAR(255),
-        whatsapp VARCHAR(255),
-        instagram VARCHAR(255),
-        facebook VARCHAR(255),
-        linkedin VARCHAR(255),
-        about TEXT,
-        profilePix VARCHAR(255),
-        surname VARCHAR(255),
-        othername VARCHAR(255),
-        username VARCHAR(255) UNIQUE,
-        address VARCHAR(255),
-        email VARCHAR(255) NOT NULL UNIQUE,
-        user_id VARCHAR(255) UNIQUE,
-        FOREIGN KEY (user_id) REFERENCES re_users(user_id)
-        );
+    account_id VARCHAR(255) UNIQUE PRIMARY KEY,
+    account_balance INT DEFAULT 0,
+    total_spent INT DEFAULT 0,
+    phone_number VARCHAR(255),
+    whatsapp VARCHAR(255),
+    instagram VARCHAR(255),
+    facebook VARCHAR(255),
+    linkedin VARCHAR(255),
+    about TEXT,
+    role ENUM('admin', 'staff', 'agent', 'client') DEFAULT 'client', -- Comma added here
+    profilePix VARCHAR(255),
+    surname VARCHAR(255),
+    othername VARCHAR(255),
+    username VARCHAR(255) UNIQUE,
+    address VARCHAR(255),
+    email VARCHAR(255) NOT NULL UNIQUE,
+    user_id VARCHAR(255) UNIQUE,
+    FOREIGN KEY (user_id) REFERENCES re_users(user_id)
+);
+
         `;
     db.query(sqlUsers, (errRoles) => {
         if (errRoles) {
