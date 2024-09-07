@@ -43,7 +43,7 @@ route.get('/users', UserLoggin, (req, res) => {
     
 
     const sql = `
-      SELECT * FROM realEstate.re_users;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_users;
     `;
 
     db.query(sql, [userId], (err, results) => {
@@ -69,7 +69,7 @@ route.get('/users/:user_id', UserLoggin, (req, res) => {
 
     // Retrieve user data from the database based on userId
     const sql = `
-      SELECT * FROM realEstate.re_users WHERE user_id = ?;
+      SELECT * FROM bkew76jt01b1ylysxnzp.re_users WHERE user_id = ?;
     `;
 
     db.query(sql, [user_id], (err, results) => {
@@ -100,7 +100,7 @@ route.post('/users/:userId/edit', UserLoggin, (req, res) => {
 
     // Update user role in the database
     const sql = `
-      UPDATE realEstate.re_users
+      UPDATE bkew76jt01b1ylysxnzp.re_users
       SET role = ?
       WHERE user_id = ?;
     `;
@@ -215,7 +215,7 @@ route.get('/profile', UserLoggin, (req, res) => {
     if (!userCookie) {
         res.redirect('/login');
     } else {
-        const user = db.query('SELECT * FROM realEstate.re_users WHERE email = ?', [userData.email], async (error, result) => {
+        const user = db.query('SELECT * FROM bkew76jt01b1ylysxnzp.re_users WHERE email = ?', [userData.email], async (error, result) => {
 
             // console.log('This is the dashboard Details : ', userData);
             if (error) {
