@@ -53,11 +53,10 @@ route.get('/createUser', (req, res) => {
                 console.log('Error creating accounts table:', errAccounts);
                 return res.status(500).send('Internal Server Error');
             }
-         res.send('Account Created"):
+        
             console.log('Accounts Created Successfully');
-
-
         });
+     res.send('User & Account Created"):
 });
 
 route.get('/createProp', (req, res) => {
