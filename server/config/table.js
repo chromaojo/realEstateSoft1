@@ -42,13 +42,13 @@ route.get('/createUser', (req, res) => {
 );
 
         `;
-    db.query(sqlUsers, (errRoles) => {
-        if (errRoles) {
-            console.log('Error creating roles table:', errRoles);
-            return res.status(500).send('Internal Server Error On User');
-        }
-        console.log('Users Created Successfully');
-    });
+    // db.query(sqlUsers, (errRoles) => {
+    //     if (errRoles) {
+    //         console.log('Error creating roles table:', errRoles);
+    //         return res.status(500).send('Internal Server Error On User');
+    //     }
+    //     console.log('Users Created Successfully');
+    // });
      db.query(sqlAccounts, (errAccounts) => {
             if (errAccounts) {
                 console.log('Error creating accounts table:', errAccounts);
@@ -57,7 +57,7 @@ route.get('/createUser', (req, res) => {
         
             console.log('Accounts Created Successfully');
         });
-     // res.send('User & Account Created"):
+    res.send('User & Account Created"):
 });
 
 route.get('/createProp', (req, res) => {
