@@ -30,7 +30,6 @@ route.get('/createUser', (req, res) => {
         facebook VARCHAR(255),
         linkedin VARCHAR(255),
         about TEXT,
-        role ENUM('admin', 'staff', 'agent', 'client') DEFAULT 'client',
         profilePix VARCHAR(255),
         surname VARCHAR(255),
         othername VARCHAR(255),
@@ -56,7 +55,7 @@ route.get('/createUser', (req, res) => {
         
             console.log('Accounts Created Successfully');
         });
-     res.send('User & Account Created"):
+     // res.send('User & Account Created"):
 });
 
 route.get('/createProp', (req, res) => {
