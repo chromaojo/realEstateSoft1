@@ -57,15 +57,15 @@ route.get('/createUser', (req, res) => {
 
 
         });
-        db.query(sqlSaved, (errSh) => {
-            if (errSh) {
-                console.log('Error creating property table:', errShipments);
-                return res.status(500).send('Internal Server Error');
-            }
-            console.log(' Archive / Saved Table Created Successfully');
+        // db.query(sqlSaved, (errSh) => {
+        //     if (errSh) {
+        //         console.log('Error creating property table:', errShipments);
+        //         return res.status(500).send('Internal Server Error');
+        //     }
+        //     console.log(' Archive / Saved Table Created Successfully');
 
-            res.send(' Archive / Saved Tables Created Successfully');
-        });
+        //     res.send(' Archive / Saved Tables Created Successfully');
+        // });
     });
 });
 
