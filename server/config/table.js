@@ -30,7 +30,7 @@ route.get('/createUser', (req, res) => {
         facebook VARCHAR(255),
         linkedin VARCHAR(255),
         about TEXT,
-        role ENUM('admin', 'staff', 'agent', 'client') DEFAULT 'client'
+        role ENUM('admin', 'staff', 'agent', 'client') DEFAULT 'client',
         profilePix VARCHAR(255),
         surname VARCHAR(255),
         othername VARCHAR(255),
@@ -53,6 +53,7 @@ route.get('/createUser', (req, res) => {
                 console.log('Error creating accounts table:', errAccounts);
                 return res.status(500).send('Internal Server Error');
             }
+         res.render('Account Created"):
             console.log('Accounts Created Successfully');
 
 
