@@ -57,7 +57,7 @@ route.get('/createUser', (req, res) => {
         
             console.log('Accounts Created Successfully');
         });
-    res.send('User & Account Created"):
+    // res.send('User & Account Created"):
 });
 
 route.get('/createProp', (req, res) => {
